@@ -12,8 +12,8 @@ documentation = "https://docs.rs/hyper-rustls/"
 
 [dependencies]
 http = "1"
-hyper = { version = "1", default-features = false }
-hyper-util = { version = "0.1", default-features = false, features = ["client-legacy", "tokio"] }
+hyper = {  git = "https://github.com/howardjohn/hyper", branch = "hyper/h2-connect-hung-connections", default-features = false }
+hyper-util = {  git = "https://github.com/howardjohn/hyper-util", branch = "hyper/h2-connect-hung-connections", default-features = false, features = ["client-legacy", "tokio"] }
 log = { version = "0.4.4", optional = true }
 pki-types = { package = "rustls-pki-types", version = "1" }
 rustls-native-certs = { version = "0.7", optional = true }
@@ -27,7 +27,7 @@ futures-util = { version = "0.3", default-features = false }
 
 [dev-dependencies]
 http-body-util = "0.1"
-hyper-util = { version = "0.1", default-features = false, features = ["server-auto"] }
+hyper-util = {  git = "https://github.com/howardjohn/hyper-util", branch = "hyper/h2-connect-hung-connections", default-features = false, features = ["server-auto"] }
 rustls = { version = "0.23", default-features = false, features = ["tls12"] }
 rustls-pemfile = "2"
 tokio = { version = "1.0", features = ["io-std", "macros", "net", "rt-multi-thread"] }
